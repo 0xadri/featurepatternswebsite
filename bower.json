@@ -1,0 +1,17 @@
+{
+  "name": "specs web app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Adrien Berthou <adiber_garcia@hotmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6"
+  }
+}
