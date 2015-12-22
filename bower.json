@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "Adrien Berthou <adiber_garcia@hotmail.com>"
+    "Adrien Be <https://github.com/adrien-be>"
   ],
   "license": "ISC",
   "moduleType": [],
@@ -12,6 +12,7 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
     "bootstrap": "~3.3.6"
   }
 }

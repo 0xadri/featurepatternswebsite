@@ -9,33 +9,7 @@ module.exports = function(config){
         console.log('Db opened');
     });
 
-    var featureSchema = mongoose.Schema({
-        name: String,
-        description: String,
-        rating: String,
-        userStoryCount: String,
-        license: String,
-        requirementSteps : [
-				{
-					name: String,
-					userStories : [
-						String,
-						String,
-						String,
-						String,
-						String
-					]
-				},
-				{
-					name: String,
-					userStories : [
-						String,
-						String
-					]
-				}
-			]
-    });
-    var Feature = mongoose.model('Feature', featureSchema);
+	var Feature = require('./featureDbModel');
 
     Feature.find({}).exec(function(err, collection){
         if(collection.length === 0){

@@ -1,0 +1,33 @@
+h1 Browse features
+table.table.table-striped
+	thead
+		tr
+			th Feature name
+			th Description
+			th Rating
+			th User Stories
+			th License
+			th 
+			th
+	tbody
+		tr(ng-repeat="feature in featureList")
+			td {{ feature.name }}
+			td {{ feature.description }}
+			td {{ feature.rating }}
+			td {{ feature.userStoryCount }}
+			td {{ feature.license }}
+			td 
+				a(href="#/feature/{{ feature._id }}") Open
+			td.dropdown
+				a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+					| select 
+					span.caret
+				ul.dropdown-menu
+					li
+						a(href='#') clone
+					li
+						a(href='#') export to Trello
+					li
+						a(href='#') export to JIRA
+					li
+						a(href='#') more... 

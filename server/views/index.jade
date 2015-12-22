@@ -1,37 +1,12 @@
 extends ../includes/layout.jade
 
 block main-content
-	.container(ng-controller="TableController as vm")
-		h1 {{ vm.message }}
-		table.table.table-striped
-			thead
-				tr
-					th Feature name
-					th Description
-					th Rating
-					th User Stories
-					th License
-					th 
-					th
-			tbody
-				tr(ng-repeat="feature in vm.featureList")
-					td {{ feature.name }}
-					td {{ feature.description }}
-					td {{ feature.rating }}
-					td {{ feature.userStoryCount }}
-					td {{ feature.license }}
-					td 
-						a Open
-					td.dropdown
-						a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-							| select 
-							span.caret
-						ul.dropdown-menu
-							li
-								a(href='#') clone
-							li
-								a(href='#') export to Trello
-							li
-								a(href='#') export to JIRA
-							li
-								a(href='#') more...
+	.container
+		h1 Welcome to feature patterns
+		p More marketing speach coming soon
+		a(href="/app#/start") Go to app
+		br
+		br
+		br
+		br
+		br

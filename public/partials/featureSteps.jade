@@ -1,0 +1,26 @@
+h1 {{ feature.name }}
+
+table.table.table-striped
+	thead
+		tr
+			th Step name
+			th 
+			th
+	tbody
+		tr(ng-repeat="step in feature.requirementSteps")
+			td {{ step.name }}
+			td 
+				a(href="#/step/{{ step._id }}") Open
+			td.dropdown
+				a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+					| select 
+					span.caret
+				ul.dropdown-menu
+					li
+						a(href='#') clone
+					li
+						a(href='#') export to Trello
+					li
+						a(href='#') export to JIRA
+					li
+						a(href='#') more...

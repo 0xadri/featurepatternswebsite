@@ -1,0 +1,22 @@
+h1 Individual step
+table.table.table-striped
+	thead
+		tr
+			th User Story
+			th
+	tbody
+		tr(ng-repeat="story in featureStep.userStories")
+			td {{ story }}
+			td.dropdown
+				a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+					| select 
+					span.caret
+				ul.dropdown-menu
+					li
+						a(href='#') clone
+					li
+						a(href='#') export to Trello
+					li
+						a(href='#') export to JIRA
+					li
+						a(href='#') more...

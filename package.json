@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Adrien Be <https://github.com/adrien-be>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",

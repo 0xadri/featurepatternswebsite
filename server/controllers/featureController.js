@@ -2,39 +2,47 @@ var mongoose = require('mongoose');
 
 
 module.exports = function(app){
+
+	var Feature = mongoose.model('Feature');
 	
-	// Top level features
-	app.get('/all-features', function(req, res, next){
-		// get from DB
-		console.log('Getting all features from Db...');
-
-		var featureSchema = mongoose.Schema({
-			name: String,
-			description: String,
-			rating: String,
-			userStoryCount: String,
-			license: String
-		});
-
-		var featureModel = featureSchema
-
-		var Feature = mongoose.model('Feature');
-
-		// find each person with a last name matching 'Ghost', selecting the `name` and `occupation` fields
-		Feature.find({}, function(err, docs){
-			console.log(docs);
-		});
-
-		next();
+	app.get('/api', function(req, res) {
+	    res.json({ message: 'hooray! welcome to our api!' });   
 	});
 
+	/*
+		Features API overview
 
-	// Requirement steps level
-/*
-	app.get('/feature/:fid/requirement-step/:rid', urlencodedParser, function(req, res){
-		// get from DB
+		/api/features	GET	Get all the features.
+		/api/features	POST	Create a feature.
+		/api/features/:feature_id	GET	Get a single feature.
+		/api/features/:feature_id	PUT	Update a feature with new info.
+		/api/features/:feature_id	DELETE	Delete a feature.
+	*/
+
+	// Get all the features
+	app.get('/api/feature', function(req, res, next){
+
+		Feature.find({}, function(err, features){
+			if (err)
+                res.send(err);
+
+            res.json(features);
+		});
+
 	});
-	
+
+	// Get a single feature
+	app.get('/api/feature/:feature_id', function(req, res){
+
+		Feature.findById(req.params.feature_id, function(err, feature) {
+            if (err)
+                res.send(err);
+            res.json(feature);
+        });
+
+	});
+
+/*	
 	app.get('/feature/:fid/requirement-step/', function(req, res){
 		// update or create DB
 	});
